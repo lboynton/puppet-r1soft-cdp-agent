@@ -9,6 +9,10 @@ class r1soft_cdp_agent::packages {
 
 	package { 'cdp-enterprise-agent':
 		ensure	=> installed,
-		require	=> Class['r1soft_cdp_agent::repo'],
+		require	=> [
+            Class['r1soft_cdp_agent::repo'],
+            Package['kernel-devel'],
+            Package['kernel-headers'],
+        ]
 	}
 }

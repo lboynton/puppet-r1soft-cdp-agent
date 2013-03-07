@@ -18,6 +18,6 @@ class r1soft_cdp_agent(
     }
 
     if ($key_server != undef) {
-        r1soft_cdp_agent::key($key_server)
+        r1soft_cdp_agent::key{$key_server:}
     }
 }

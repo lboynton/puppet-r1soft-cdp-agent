@@ -17,7 +17,7 @@ class r1soft_cdp_agent(
         subscribe   => Exec['get-module'],
     }
 
-    if defined($key_server) {
+    if ($key_server != undef) {
         r1soft_cdp_agent::key($key_server)
     }
 }

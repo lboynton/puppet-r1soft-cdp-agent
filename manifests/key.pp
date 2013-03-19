@@ -3,5 +3,6 @@ define r1soft_cdp_agent::key {
         creates     => '/usr/sbin/r1soft/conf/server.allow/${name}',
         require     => Package['r1soft-cdp-enterprise-agent'],
         logoutput   => on_failure,
+        notify      => Service['cdp-agent'],
     }
 }

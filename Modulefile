@@ -1,5 +1,5 @@
 name 'ftiff-r1soft_cdp_agent'
-version '0.1.1'
+version '0.1.2'
 source 'https://github.com/esl-francois/puppet-r1soft-cdp-agent'
 author 'ftiff'
 summary "Installs and sets up the R1Soft CDP agent on CentOS/RHEL or Ubuntu/Debian"

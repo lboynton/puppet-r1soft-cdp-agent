@@ -11,10 +11,6 @@ class r1soft_cdp_agent::repo {
 		    }
 		}
 		ubuntu, debian: {
-#			apt::key { 'r1soft-stable':
-#				key		=> 'B1D53877',
-#				key_source => 'http://repo.r1soft.com/r1soft.asc',
-#			}
 			apt::source { 'r1soft-stable':
 				location    => 'http://repo.r1soft.com/apt',
 				release     => 'stable',

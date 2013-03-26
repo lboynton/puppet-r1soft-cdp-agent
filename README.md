@@ -3,7 +3,6 @@ Puppet R1Soft CDP Agent module
 ==============
 
 Tested on CentOS 6 and Ubuntu 12.04.2 LTS.
-Adapted to Ubuntu/Debian from lboynton/r1soft_cdp_agent.
 
 Usage
 --------------

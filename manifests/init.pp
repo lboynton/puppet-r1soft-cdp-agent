@@ -7,7 +7,7 @@ class r1soft_cdp_agent(
     exec { 'get-module':
         command     => '/usr/bin/r1soft-setup --get-module --silent',
         subscribe   => Package['r1soft-cdp-enterprise-agent'],
-        refreshonly => true,
+        unless      => '/bin/grep hcpdriver /proc/modules',
         logoutput   => on_failure,
     }
 
@@ -21,3 +21,4 @@ class r1soft_cdp_agent(
         r1soft_cdp_agent::key{$key_server:}
     }
 }
+

@@ -2,5 +2,5 @@
 Solved issue #1 : will check for filename with regex
 Solved issue #2 : will check if kernel module is loaded
 Added Ubuntu support
-2012-02-17 Lee Boynton <lee@lboynton.com> 0.0.1
+2013-02-17 Lee Boynton <lee@lboynton.com> 0.0.1
 Initial release

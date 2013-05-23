@@ -1,3 +1,6 @@
+2013-05-23 Eduardo Balsa http://www.ebserver.org 0.2.0
+Added Debian support
+Added support for direct key definition
 2013-03-20 Francois TIFFREAU <fti@me.com> 0.1.0
 Solved issue #1 : will check for filename with regex
 Solved issue #2 : will check if kernel module is loaded

@@ -16,11 +16,12 @@ class r1soft_cdp_agent::packages {
     }
     
     if $operatingsystem == ('debian') {
-        exec { "kernel headers":
-            command => "apt-get install linux-headers-`uname -r` -y",
-            onlyif => "dpkg-query -W linux-headers-`uname -r` 2>/dev/null|wc -l",
+    
+        package { "linux-headers-${kernelrelease}":
+            ensure  => installed,
+            require => Class['r1soft_cdp_agent::repo'],
             before => Package['r1soft-cdp-enterprise-agent'],
-            }       
+        }
     }
 
     package { 'r1soft-cdp-enterprise-agent':
@@ -28,3 +29,5 @@ class r1soft_cdp_agent::packages {
         require => Class['r1soft_cdp_agent::repo'],
     }
 }
+
+

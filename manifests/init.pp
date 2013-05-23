@@ -1,5 +1,5 @@
 class r1soft_cdp_agent(
-    $key_server = undef
+    $key_server = undef,
     $key = undef
 ) {
     include r1soft_cdp_agent::repo
@@ -21,7 +21,7 @@ class r1soft_cdp_agent(
     if ($key != undef) {
         r1soft_cdp_agent::key{$key:}
     }
-    elseif ($key_server != undef)  {
+    elsif ($key_server != undef)  {
         r1soft_cdp_agent::get_key{$key_server:}
     }
     

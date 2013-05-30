@@ -1,5 +1,6 @@
 class r1soft_cdp_agent(
-    $key_server = undef
+    $key_server = undef,
+    $key = undef
 ) {
     include r1soft_cdp_agent::repo
     include r1soft_cdp_agent::packages
@@ -17,8 +18,12 @@ class r1soft_cdp_agent(
         subscribe   => Exec['get-module'],
     }
 
-    if ($key_server != undef) {
-        r1soft_cdp_agent::key{$key_server:}
+    if ($key != undef) {
+        r1soft_cdp_agent::key{$key:}
     }
+    elsif ($key_server != undef)  {
+        r1soft_cdp_agent::get_key{$key_server:}
+    }
+    
 }
 

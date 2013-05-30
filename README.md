@@ -1,4 +1,3 @@
-
 Puppet R1Soft CDP Agent module
 ==============
 
@@ -12,7 +11,7 @@ Simply specify the IP address or hostname of the CDP master to the `key_server` 
 		key_server => 'http://192.168.0.25:8080',
 	}
 
-Alternatively you can also specify directly the key. 
+Alternatively you can also specify the key directly. 
 
 	class { 'r1soft_cdp_agent':
 		key => 'xxxxxxxxx',

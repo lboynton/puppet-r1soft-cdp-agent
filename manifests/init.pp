@@ -1,13 +1,13 @@
-class r1soft_cdp_agent(
+class serverbackup_cdp_agent(
     $key_server = undef,
     $key = undef
 ) {
-    include r1soft_cdp_agent::repo
-    include r1soft_cdp_agent::packages
+    include serverbackup_cdp_agent::repo
+    include serverbackup_cdp_agent::packages
 
     exec { 'get-module':
-        command     => '/usr/bin/r1soft-setup --get-module --silent',
-        subscribe   => Package['r1soft-cdp-enterprise-agent'],
+        command     => '/usr/bin/serverbackup-setup --get-module --silent',
+        subscribe   => Package['serverbackup-cdp-enterprise-agent'],
         unless      => '/bin/grep hcpdriver /proc/modules',
         logoutput   => on_failure,
     }
@@ -19,10 +19,10 @@ class r1soft_cdp_agent(
     }
 
     if ($key != undef) {
-        r1soft_cdp_agent::key{$key:}
+        serverbackup_cdp_agent::key{$key:}
     }
     elsif ($key_server != undef)  {
-        r1soft_cdp_agent::get_key{$key_server:}
+        serverbackup_cdp_agent::get_key{$key_server:}
     }
     
 }

@@ -1,8 +1,8 @@
-define r1soft_cdp_agent::get_key {
+define serverbackup_cdp_agent::get_key {
     $server_filename = regsubst($name, '^(.*:)//([a-z0-9\-.]+)(:[0-9]+)?(.*)$','\2')
-    exec { "/usr/bin/r1soft-setup --get-key ${name}":
+    exec { "/usr/bin/serverbackup-setup --get-key ${name}":
         creates     => "/usr/sbin/r1soft/conf/server.allow/${server_filename}",
-        require     => Package['r1soft-cdp-enterprise-agent'],
+        require     => Package[‘serverbackup-cdp-enterprise-agent'],
         logoutput   => on_failure,
         notify      => Service['cdp-agent'],
     }

@@ -1,3 +1,5 @@
+2013-09-04 Anthony Somerset http://www.somersettechsolutions.co.uk 0.3.0
+Solved issue #3 : Updating Package names from r1soft to serverbackup
 2013-05-23 Eduardo Balsa http://www.ebserver.org 0.2.0
 Added Debian support
 Added support for direct key definition

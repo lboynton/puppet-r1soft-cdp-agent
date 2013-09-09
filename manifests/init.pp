@@ -24,6 +24,5 @@ class r1soft_cdp_agent(
     elsif ($key_server != undef)  {
         r1soft_cdp_agent::get_key{$key_server:}
     }
-    
 }
 

@@ -13,7 +13,7 @@ class { 'r1soft_cdp_agent':
 }
 ```
 
-Alternatively you can also specify the key directly. 
+Alternatively you can also specify the key directly.
 
 ```puppet
 class { 'r1soft_cdp_agent':

@@ -14,9 +14,9 @@ class r1soft_cdp_agent::packages {
             }
         }
     }
-    
+
     if $operatingsystem == ('debian') {
-    
+
         package { "linux-headers-${kernelrelease}":
             ensure  => installed,
             require => Class['r1soft_cdp_agent::repo'],

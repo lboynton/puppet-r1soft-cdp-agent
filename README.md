@@ -7,12 +7,16 @@ Usage
 --------------
 Simply specify the IP address or hostname of the CDP master to the `key_server` parameter.
 
-	class { 'serverbackup_cdp_agent':
-		key_server => 'http://192.168.0.25:8080',
-	}
+```puppet
+class { 'serverbackup_cdp_agent':
+	key_server => 'http://192.168.0.25:8080',
+}
+```
 
-Alternatively you can also specify the key directly. 
+Alternatively you can also specify the key directly.
 
-	class { 'serverbackup_cdp_agent':
-		key => 'xxxxxxxxx',
-	}
+```puppet
+class { 'serverbackup_cdp_agent':
+	key => 'xxxxxxxxx',
+}
+```

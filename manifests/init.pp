@@ -24,6 +24,5 @@ class serverbackup_cdp_agent(
     elsif ($key_server != undef)  {
         serverbackup_cdp_agent::get_key{$key_server:}
     }
-    
 }
 

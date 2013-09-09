@@ -14,9 +14,9 @@ class serverbackup_cdp_agent::packages {
             }
         }
     }
-    
+
     if $operatingsystem == ('debian') {
-    
+
         package { "linux-headers-${kernelrelease}":
             ensure  => installed,
             require => Class['serverbackup_cdp_agent::repo'],

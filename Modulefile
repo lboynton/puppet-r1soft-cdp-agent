@@ -1,4 +1,4 @@
-name 'lboynton-r1soft-cdp-agent'
+name 'lboynton-r1soft_cdp_agent'
 version '0.3.0'
 source 'https://github.com/lboynton/puppet-r1soft-cdp-agent'
 author 'lboynton'

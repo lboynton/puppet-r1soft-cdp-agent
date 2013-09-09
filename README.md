@@ -1,4 +1,4 @@
-Puppet Idera CDP Agent module
+Puppet Idera (formerly R1Soft) CDP Agent module
 ==============
 
 Tested on Debian 7.0, CentOS 6 and Ubuntu 12.04.2 LTS.

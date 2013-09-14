@@ -7,7 +7,7 @@ class serverbackup_cdp_agent(
 
     exec { 'get-module':
         command     => '/usr/bin/serverbackup-setup --get-module --silent',
-        subscribe   => Package['serverbackup-cdp-enterprise-agent'],
+        subscribe   => Package['serverbackup-enterprise-agent'],
         unless      => '/bin/grep hcpdriver /proc/modules',
         logoutput   => on_failure,
     }
@@ -24,6 +24,5 @@ class serverbackup_cdp_agent(
     elsif ($key_server != undef)  {
         serverbackup_cdp_agent::get_key{$key_server:}
     }
-    
 }
 

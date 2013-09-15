@@ -1,3 +1,5 @@
+2013-09-04 Anthony Somerset http://www.somersettechsolutions.co.uk 0.3.1
+Added proxmox support
 2013-09-04 Anthony Somerset http://www.somersettechsolutions.co.uk 0.3.0
 Solved issue #3 : Updating Package names from r1soft to serverbackup
 Note: Class name has changed from r1soft_cdp_agent to serverbackup_cdp_agent

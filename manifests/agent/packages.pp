@@ -20,14 +20,12 @@ class serverbackup_cdp::agent::packages {
             if $kernelrelease  =~ /pve/ {
                 package { "pve-headers-${kernelrelease}":
                     ensure  => installed,
-                    require => Class['serverbackup_cdp::repo'],
                     before => Package['serverbackup-enterprise-agent'],
                 }
             }
             else {
                 package { "linux-headers-${kernelrelease}":
                     ensure  => installed,
-                    require => Class['serverbackup_cdp::repo'],
                     before => Package['serverbackup-enterprise-agent'],
                 }
             }

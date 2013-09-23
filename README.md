@@ -35,7 +35,6 @@ or even simpler
 
 ```puppet
 include serverbackup_cdp
-}
 ```
 
 CDP Agent & Server:

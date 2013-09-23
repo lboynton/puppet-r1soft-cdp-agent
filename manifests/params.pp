@@ -6,7 +6,7 @@ class serverbackup_cdp::params{
 	default => $::key_server,
   }
   
-  $key_server = $::key ? {
+  $key = $::key ? {
   	undef => undef,
 	default => $::key,
   }

@@ -1,3 +1,6 @@
+2013-09-23 Anthony Somerset http://www.somersettechsolutions.co.uk 0.4.0
+Added support for installing CDP Server
+Note: Class name has changed from serverbackup_cdp_agent to serverbackup_cdp as have classes.
 2013-09-30 Lee Boynton lee@lboynton.com 0.3.2
 Fixed bug detecting OS which meant kernel headers weren't installed
 2013-09-15 Anthony Somerset http://www.somersettechsolutions.co.uk 0.3.1

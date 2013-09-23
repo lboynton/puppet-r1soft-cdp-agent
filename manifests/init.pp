@@ -1,28 +1,22 @@
-class serverbackup_cdp_agent(
-    $key_server = undef,
-    $key = undef
-) {
-    include serverbackup_cdp_agent::repo
-    include serverbackup_cdp_agent::packages
+class serverbackup_cdp(
+$key_server 		= $serverbackup_cdp::params::key_server,
+$key 				= $serverbackup_cdp::params::key,
+$install_agent	    = $serverbackup_cdp::params::install_agent
+) inherits serverbackup_cdp::params  {
 
-    exec { 'get-module':
-        command     => '/usr/bin/serverbackup-setup --get-module --silent',
-        subscribe   => Package['serverbackup-enterprise-agent'],
-        unless      => '/bin/grep hcpdriver /proc/modules',
-        logoutput   => on_failure,
+	# default class action is to install the server!
+    include serverbackup_cdp::repo
+	include serverbackup_cdp::server
+	
+    if $install_agent {
+      class { 'serverbackup_cdp::agent':
+        key_server => $key_server,
+		key		   => $key,
+		install_agent => $install_agent
+      }
     }
+	
+	
 
-    service { 'cdp-agent':
-        ensure      => running,
-        enable      => true,
-        subscribe   => Exec['get-module'],
-    }
-
-    if ($key != undef) {
-        serverbackup_cdp_agent::key{$key:}
-    }
-    elsif ($key_server != undef)  {
-        serverbackup_cdp_agent::get_key{$key_server:}
-    }
 }
 

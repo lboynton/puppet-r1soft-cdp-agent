@@ -1,4 +1,4 @@
-class serverbackup_cdp_agent::repo {
+class serverbackup_cdp::repo {
     case $operatingsystem {
         redhat, centos: {
             yumrepo { 'r1soft':

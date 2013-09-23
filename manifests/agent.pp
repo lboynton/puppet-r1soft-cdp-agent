@@ -3,7 +3,7 @@ class serverbackup_cdp::agent(
     $key = $serverbackup_cdp::params::key,
 	$install_agent	    = $serverbackup_cdp::params::install_agent
 ) {
-	if $install_agent == 'false' {
+	if $install_agent == false {
     	include serverbackup_cdp::repo
 	}
     include serverbackup_cdp::agent::packages

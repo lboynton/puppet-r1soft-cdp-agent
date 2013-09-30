@@ -7,5 +7,6 @@ class serverbackup_cdp::server {
     service { 'cdp-server':
         ensure      => running,
         enable      => true,
+        require     => Package['serverbackup-enterprise'],
     }
 }

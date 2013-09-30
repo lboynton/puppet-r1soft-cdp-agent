@@ -7,7 +7,7 @@ Major Update - now supports install of CDP server - Please note the change in cl
 
 Usage
 --------------
-CDP Agent Only: 
+CDP Agent Only:
 
 Simply specify the IP address or hostname of the CDP master to the `key_server` parameter.
 

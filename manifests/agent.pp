@@ -1,13 +1,13 @@
 class serverbackup_cdp::agent(
     $key_server = $serverbackup_cdp::params::key_server,
     $key = $serverbackup_cdp::params::key,
-	$install_agent	    = $serverbackup_cdp::params::install_agent
+    $install_agent      = $serverbackup_cdp::params::install_agent
 ) {
-	if $install_agent {
-		#noop because negative if on boolean not great in puppet
-	} else {
-    		include serverbackup_cdp::repo
-	}
+    if $install_agent {
+        #noop because negative if on boolean not great in puppet
+    } else {
+            include serverbackup_cdp::repo
+    }
     include serverbackup_cdp::agent::packages
 
     exec { 'get-module':

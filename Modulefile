@@ -1,5 +1,5 @@
 name 'lboynton-r1soft_cdp_agent'
-version '0.3.1'
+version '0.3.2'
 source 'https://github.com/lboynton/puppet-r1soft-cdp-agent'
 author 'lboynton'
 summary "Installs and sets up the Idera (formerly R1Soft) CDP agent on CentOS/RHEL or Ubuntu/Debian"

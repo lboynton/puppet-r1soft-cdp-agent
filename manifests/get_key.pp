@@ -6,7 +6,7 @@ define serverbackup_cdp_agent::get_key {
             Package['serverbackup-enterprise-agent'],
             Exec['get-module'],
         ],
-        logoutput   => on_failure,
+        logoutput   => true,
         notify      => Service['cdp-agent'],
     }
 }

@@ -20,3 +20,5 @@ class { 'serverbackup_cdp_agent':
 	key => 'xxxxxxxxx',
 }
 ```
+
+Add `ensure => latest` as a class parameter to keep the agent up to date.

@@ -1,4 +1,6 @@
-class serverbackup_cdp_agent::packages {
+class serverbackup_cdp_agent::packages(
+    $ensure = installed,
+) {
     case $operatingsystem {
         centos, redhat: {
             if !defined(Package['kernel-devel']) {
@@ -38,7 +40,7 @@ class serverbackup_cdp_agent::packages {
     }
 
     package { 'serverbackup-enterprise-agent':
-        ensure  => installed,
+        ensure  => $ensure,
         require => Class['serverbackup_cdp_agent::repo'],
     }
 }

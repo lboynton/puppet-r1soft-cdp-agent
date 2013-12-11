@@ -1,9 +1,13 @@
 class serverbackup_cdp_agent(
+    $ensure     = installed,
     $key_server = undef,
-    $key = undef
+    $key        = undef
 ) {
     include serverbackup_cdp_agent::repo
-    include serverbackup_cdp_agent::packages
+
+    class { 'serverbackup_cdp_agent::packages':
+        ensure => $ensure,
+    }
 
     exec { 'get-module':
         command     => '/usr/bin/serverbackup-setup --get-module --silent',

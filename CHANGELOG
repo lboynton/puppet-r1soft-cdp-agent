@@ -1,3 +1,5 @@
+2013-12-11 Lee Boynton lee@lboynton.com 0.3.3
+Added paramater to control ensure parameter
 2013-09-30 Lee Boynton lee@lboynton.com 0.3.2
 Fixed bug detecting OS which meant kernel headers weren't installed
 2013-09-15 Anthony Somerset http://www.somersettechsolutions.co.uk 0.3.1

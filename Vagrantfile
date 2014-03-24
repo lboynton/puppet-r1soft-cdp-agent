@@ -16,11 +16,11 @@ Vagrant.configure("2") do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
-  # config.vm.network :forwarded_port, guest: 80, host: 8080
+  config.vm.network :forwarded_port, guest: 80, host: 8080, auto_correct: true
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
-  config.vm.network :private_network, ip: "192.168.33.10"
+  #config.vm.network :private_network, ip: "192.168.33.10"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
@@ -32,8 +32,8 @@ Vagrant.configure("2") do |config|
   # the path on the guest to mount the folder. And the optional third
   # argument is a set of non-required options.
   # config.vm.synced_folder "../data", "/vagrant_data"
-  config.vm.synced_folder ".", "/srv/puppet/modules/serverbackup_cdp", :nfs => true
-  config.vm.synced_folder "modules/stdlib", "/srv/puppet/modules/stdlib", :nfs => true
+  config.vm.synced_folder ".", "/srv/puppet/modules/serverbackup_cdp"
+  config.vm.synced_folder "modules/stdlib", "/srv/puppet/modules/stdlib"
 
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
@@ -71,7 +71,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :puppet do |puppet|
     puppet.options = ["--modulepath", "/srv/puppet/modules"]
     puppet.manifests_path = "tests"
-    puppet.manifest_file  = "init.pp"
+    puppet.manifest_file  = "vagrant.pp"
   end
 
   # Enable provisioning with chef solo, specifying a cookbooks path, roles
